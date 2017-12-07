@@ -14,7 +14,6 @@
     "Configuration file(s) parsing and processing functions.")
 
 (require '[clojure-ini.core :as clojure-ini])
-(require '[clojure.tools.logging :as log])
 
 (defn properties->map
     "Convert property entries into map. Keys are converted into proper keywords."
