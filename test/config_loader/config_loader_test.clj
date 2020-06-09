@@ -73,3 +73,14 @@
       (is (= (properties->map property-with-one-item) {:foo "bar"}) "property with one item"))
     (let [property-with-two-items (load-property-file "test/two-items.properties")]
       (is (= (properties->map property-with-two-items) {:foo "bar" :x "y"}) "property with two items"))))
+
+(deftest test-load-configuration-file
+  "Check the function load-configuration-file."
+  (testing
+    "how properties are read and converted into map."
+    (let [empty-property (load-configuration-file "test/empty.ini")]
+      (is (= (properties->map empty-property) {}) "empty configuration file"))
+    (let [property-with-one-item (load-configuration-file "test/one-item.ini")]
+      (is (= (properties->map property-with-one-item) {:foo "bar"}) "configuration file with one item"))
+    (let [property-with-two-items (load-configuration-file "test/two-items.ini")]
+      (is (= (properties->map property-with-two-items) {:foo "bar" :x "y"}) "configuration file with two items"))))
