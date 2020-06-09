@@ -49,3 +49,16 @@
 ;
 ; Tests for functions behaviour
 ;
+(deftest test-properties->map
+  "Check the function properties->map."
+  (testing
+    "how properties are converted into map."
+    (let [empty-property (new java.util.Properties)]
+      (is (= (properties->map empty-property) {}) "empty property"))
+    (let [property-with-one-item (new java.util.Properties)]
+      (.setProperty property-with-one-item "foo" "bar")
+      (is (= (properties->map property-with-one-item) {:foo "bar"}) "property with one item"))
+    (let [property-with-two-items (new java.util.Properties)]
+      (.setProperty property-with-two-items "foo" "bar")
+      (.setProperty property-with-two-items "x" "y")
+      (is (= (properties->map property-with-two-items) {:foo "bar" :x "y"}) "property with two items"))))
