@@ -1,5 +1,5 @@
 ;
-;  (C) Copyright 2017  Pavel Tisnovsky
+;  (C) Copyright 2017, 2020  Pavel Tisnovsky
 ;
 ;  All rights reserved. This program and the accompanying materials
 ;  are made available under the terms of the Eclipse Public License v1.0
@@ -11,27 +11,27 @@
 ;
 
 (ns config-loader.config-loader
-    "Configuration file(s) parsing and processing functions.")
+  "Configuration file(s) parsing and processing functions.")
 
 (require '[clojure-ini.core :as clojure-ini])
 
 (defn properties->map
-    "Convert property entries into map. Keys are converted into proper keywords."
-    [properties]
-    (into {}
+  "Convert property entries into map. Keys are converted into proper keywords."
+  [properties]
+  (into {}
         (for [[k v] properties]
               [(keyword k) v])))
 
 (defn load-property-file
-    "Load configuration from the provided property file."
-    [file-name]
-    (with-open [reader (clojure.java.io/reader file-name)] 
-        (let [properties (java.util.Properties.)]
-            (.load properties reader)
-            (properties->map properties))))
+  "Load configuration from the provided property file."
+  [file-name]
+  (with-open [reader (clojure.java.io/reader file-name)]
+    (let [properties (java.util.Properties.)]
+      (.load properties reader)
+      (properties->map properties))))
 
 (defn load-configuration-file
-    "Load configuration from the provided INI file."
-    [file-name]
-    (clojure-ini/read-ini file-name :keywordize? true))
+  "Load configuration from the provided INI file."
+  [file-name]
+  (clojure-ini/read-ini file-name :keywordize? true))
 
