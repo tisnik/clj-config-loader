@@ -19,32 +19,33 @@
 ;
 
 (defn callable?
-    "Test if given function-name is bound to the real function."
-    [function-name]
-    (clojure.test/function? function-name))
+  "Test if given function-name is bound to the real function."
+  [function-name]
+  (clojure.test/function? function-name))
 
 ;
 ; Tests for functions existence
 ;
 (deftest test-properties->map-existence
-    "Check that the config-loader.config-loader/properties->map definition exists."
-    (testing "if the config-loader.config-loader/properties->map definition exists."
-        (is (callable? 'config-loader.config-loader/properties->map))))
+  "Check that the config-loader.config-loader/properties->map definition exists."
+  (testing
+    "if the config-loader.config-loader/properties->map definition exists."
+    (is (callable? 'config-loader.config-loader/properties->map))))
 
 
 (deftest test-load-property-file-existence
-    "Check that the config-loader.config-loader/load-property-file definition exists."
-    (testing "if the config-loader.config-loader/load-property-file definition exists."
-        (is (callable? 'config-loader.config-loader/load-property-file))))
+  "Check that the config-loader.config-loader/load-property-file definition exists."
+  (testing
+    "if the config-loader.config-loader/load-property-file definition exists."
+    (is (callable? 'config-loader.config-loader/load-property-file))))
 
 
 (deftest test-load-configuration-file-existence
-    "Check that the config-loader.config-loader/load-configuration-file definition exists."
-    (testing "if the config-loader.config-loader/load-configuration-file definition exists."
-        (is (callable? 'config-loader.config-loader/load-configuration-file))))
+  "Check that the config-loader.config-loader/load-configuration-file definition exists."
+  (testing
+    "if the config-loader.config-loader/load-configuration-file definition exists."
+    (is (callable? 'config-loader.config-loader/load-configuration-file))))
 
 ;
 ; Tests for functions behaviour
 ;
-
-
