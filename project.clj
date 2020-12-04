@@ -17,8 +17,8 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.10.1"]
                  [clojure-ini "0.0.1"]]
-  :plugins [[test2junit "1.1.0"]
-            [codox "0.8.11"]
+  :plugins [[codox "0.10.7"]
+            [test2junit "1.1.0"]
             [lein-cloverage "1.0.6"]]
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}})
