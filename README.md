@@ -4,6 +4,8 @@
 
 [Coverage report](https://tisnik.github.io/clj-config-loader/coverage/cov.html)
 
+[Depencendies](doc/dependencies.clj)
+
 Configuration file(s) parsing and processing functions.
 
 
