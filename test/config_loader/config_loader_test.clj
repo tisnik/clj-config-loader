@@ -1,5 +1,5 @@
 ;
-;  (C) Copyright 2017, 2020  Pavel Tisnovsky
+;  (C) Copyright 2017, 2020, 2021  Pavel Tisnovsky
 ;
 ;  All rights reserved. This program and the accompanying materials
 ;  are made available under the terms of the Eclipse Public License v1.0
@@ -27,23 +27,23 @@
 ; Tests for functions existence
 ;
 (deftest test-properties->map-existence
-  "Check that the config-loader.config-loader/properties->map definition exists."
+  "Check that the config-loader.config-loader/properties->map function definition exists."
   (testing
-    "if the config-loader.config-loader/properties->map definition exists."
+    "if the config-loader.config-loader/properties->map function definition exists."
     (is (callable? 'config-loader.config-loader/properties->map))))
 
 
 (deftest test-load-property-file-existence
-  "Check that the config-loader.config-loader/load-property-file definition exists."
+  "Check that the config-loader.config-loader/load-property-file function definition exists."
   (testing
-    "if the config-loader.config-loader/load-property-file definition exists."
+    "if the config-loader.config-loader/load-property-file function definition exists."
     (is (callable? 'config-loader.config-loader/load-property-file))))
 
 
 (deftest test-load-configuration-file-existence
-  "Check that the config-loader.config-loader/load-configuration-file definition exists."
+  "Check that the config-loader.config-loader/load-configuration-file function definition exists."
   (testing
-    "if the config-loader.config-loader/load-configuration-file definition exists."
+    "if the config-loader.config-loader/load-configuration-file function definition exists."
     (is (callable? 'config-loader.config-loader/load-configuration-file))))
 
 ;
