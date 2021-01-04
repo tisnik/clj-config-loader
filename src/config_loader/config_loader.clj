@@ -1,5 +1,5 @@
 ;
-;  (C) Copyright 2017, 2020  Pavel Tisnovsky
+;  (C) Copyright 2017, 2020, 2021  Pavel Tisnovsky
 ;
 ;  All rights reserved. This program and the accompanying materials
 ;  are made available under the terms of the Eclipse Public License v1.0
@@ -16,7 +16,7 @@
 (require '[clojure-ini.core :as clojure-ini])
 
 (defn properties->map
-  "Convert property entries into map. Keys are converted into proper keywords."
+  "Convert property entries into a map. Keys are converted into proper keywords."
   [properties]
   (into {}
         (for [[k v] properties]
@@ -35,3 +35,4 @@
   [file-name]
   (clojure-ini/read-ini file-name :keywordize? true))
 
+; TODO: TOML processing
